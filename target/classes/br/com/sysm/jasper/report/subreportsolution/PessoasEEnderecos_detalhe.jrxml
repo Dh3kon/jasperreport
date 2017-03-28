@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-03-28T13:55:02 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PessoasEEnderecos_detalhe" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="abe5fbe2-bb66-4368-92f2-97d3907eaee3">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL JasperReports Adapter"/>
+	<parameter name="codigo_pessoa" class="java.lang.Long"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *
+FROM jasperreports.endereco
+WHERE 
+	 pessoa = $P{codigo_pessoa}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.Long"/>
+	<field name="pessoa" class="java.lang.Long"/>
+	<field name="endereco" class="java.lang.String"/>
+	<field name="bairro" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="numero" class="java.lang.Long"/>
+	<columnHeader>
+		<band height="13">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="80" y="0" width="200" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="02ebb455-a3a0-4e56-82be-e275d749df5e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="280" y="0" width="50" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="8bbf2ee5-1541-4822-a832-5855ac03e391">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="330" y="0" width="170" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="a888bfe6-466e-4766-ae95-8b4b8c5607c0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="500" y="0" width="55" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="e5cef128-7756-4a93-be0a-30eb0d531c65"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UF]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="200" height="15" uuid="ebff1e07-31d3-4417-ae75-60cefca944e6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="170" height="15" uuid="842a0466-1fd5-45a2-b54b-dd684772770d"/>
+				<textFieldExpression><![CDATA[$F{bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="55" height="15" uuid="54def595-265f-4347-af9a-36eefdc1cab2"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="50" height="15" uuid="bd381674-caac-44bd-9828-e04b2e80369c">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
